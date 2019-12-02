@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+
+  .qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+    position: relative;
+    span {
+      position: absolute;
+      font-size: 11px;
+      text-align: center;
+      height: 110px;
+      display: grid;
+      align-content: flex-end;              //check flex-end
+    }
+  }
+}
+
+.char1 {
+  transform: rotate(-90deg);
+}
+
+.char22 {
+  transform: rotate(90deg);
+}
+
+$rotatePixel-top: 75; //rotation deg of char 22 + 15                
+$decrement: -8;
+
+@for $i from 2 through 21 {
+  .char#{$i} {
+    transform: (rotate($rotatePixel-top + deg));
+  }
+  $rotatePixel-top: $rotatePixel-top + $decrement;
+}
+
+$rotatePixel-bottom: -105; //90 + 15
+@for $i from 23 through 42 {
+  .char#{$i} {
+    transform: rotate($rotatePixel-bottom + deg);
+  }
+  $rotatePixel-bottom: $rotatePixel-bottom + $decrement;
+}
