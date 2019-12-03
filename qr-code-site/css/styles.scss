@@ -2,27 +2,44 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Bebas Neue", cursive;
 }
 
 .container {
+  border: 1px solid;
+  width: 1200px;
+  height: 720px;
+  margin: 0 auto;
+}
+
+.row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  padding:20px 0;
+  flex-wrap: wrap;
 
   .qrcode-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid; */
     position: relative;
+    margin: 25px;
+    width:50px;           //50 + 25 = 75px i.e. 1.25 inches diameter of circle
+
+    .qrcode-img{
+      width:inherit;
+    }
+    
     span {
       position: absolute;
-      font-size: 11px;
+      font-size: 12px;
       text-align: center;
-      height: 110px;
+      height: 105px;
       display: grid;
-      align-content: flex-end;              //check flex-end
+      align-content: flex-end; //check flex-end
+      color: blue;
+      font-weight: bold;
     }
   }
 }
@@ -35,14 +52,14 @@
   transform: rotate(90deg);
 }
 
-$rotatePixel-top: 75; //rotation deg of char 22 + 15                
-$decrement: -8;
+$rotatePixel-top: 75; //rotation deg of char 22 + 15
+$decrement: 8;
 
 @for $i from 2 through 21 {
   .char#{$i} {
     transform: (rotate($rotatePixel-top + deg));
   }
-  $rotatePixel-top: $rotatePixel-top + $decrement;
+  $rotatePixel-top: $rotatePixel-top - $decrement;
 }
 
 $rotatePixel-bottom: -105; //90 + 15
@@ -50,5 +67,5 @@ $rotatePixel-bottom: -105; //90 + 15
   .char#{$i} {
     transform: rotate($rotatePixel-bottom + deg);
   }
-  $rotatePixel-bottom: $rotatePixel-bottom + $decrement;
+  $rotatePixel-bottom: $rotatePixel-bottom - $decrement;
 }
