@@ -5,41 +5,43 @@
   font-family: "Bebas Neue", cursive;
 }
 
-.container {
-  border: 1px solid;
-  width: 1200px;
-  height: 720px;
-  margin: 0 auto;
+@page {
+  size: A4;
+  margin: 0;
 }
 
+.container {
+  page: cover;
+}
 .row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding:20px 0;
-  flex-wrap: wrap;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
 
   .qrcode-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     position: relative;
     margin: 25px;
-    width:50px;           //50 + 25 = 75px i.e. 1.25 inches diameter of circle
+    width: 50px;
 
-    .qrcode-img{
-      width:inherit;
+    .qrcode-img {
+      width: inherit;
     }
-    
+
     span {
       position: absolute;
       font-size: 12px;
       text-align: center;
       height: 105px;
-      display: grid;
-      align-content: flex-end; //check flex-end
       color: blue;
       font-weight: bold;
+      left: 49%;
+      top: -48%;
+      p {
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 }
