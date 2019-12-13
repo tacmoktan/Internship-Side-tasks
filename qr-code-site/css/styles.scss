@@ -12,62 +12,28 @@
 
 .container {
   page: cover;
+  display:block;
 }
 .row {
-  display: block;
+  display: inline-block;
   width: 100%;
-  padding: 20px 0;
   text-align: center;
-
+  margin:15px 0;
+  
   .qrcode-container {
     display: inline-block;
     position: relative;
-    margin: 25px;
-    width: 50px;
+    margin: 0px 2px;
+    width: 90px;
 
     .qrcode-img {
       width: inherit;
     }
-
-    span {
-      position: absolute;
-      font-size: 12px;
-      text-align: center;
-      height: 105px;
-      color: blue;
-      font-weight: bold;
-      left: 49%;
-      top: -48%;
-      p {
-        position: absolute;
-        bottom: 0;
-      }
-    }
   }
 }
 
-.char1 {
-  transform: rotate(-90deg);
-}
 
-.char22 {
-  transform: rotate(90deg);
-}
 
-$rotatePixel-top: 75; //rotation deg of char 22 + 15
-$decrement: 8;
 
-@for $i from 2 through 21 {
-  .char#{$i} {
-    transform: (rotate($rotatePixel-top + deg));
-  }
-  $rotatePixel-top: $rotatePixel-top - $decrement;
-}
 
-$rotatePixel-bottom: -105; //90 + 15
-@for $i from 23 through 42 {
-  .char#{$i} {
-    transform: rotate($rotatePixel-bottom + deg);
-  }
-  $rotatePixel-bottom: $rotatePixel-bottom - $decrement;
-}
+
